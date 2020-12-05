@@ -1,0 +1,2 @@
+$X = ((cat <where-the-file-was-saved>) -split "`n").ForEach{$_ -as [UInt64]}
+$(foreach ($n1 in $X) {foreach ($n2 in $X) {foreach ($n3 in $X) {if ($n1 + $n2 + $n3 -eq 2020) {[pscustomobject]@{n1 = $n1; n2 = $n2; n3 = $n3; sum = $n1 + $n2 + $n3; prod = $n1 * $n2 * $n3}}}}}) | Format-Table
